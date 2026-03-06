@@ -1,6 +1,7 @@
 # ASort 抽象类：定义排序算法的统一接口。
 # 使用抽象基类强制所有排序子类实现指定方法，确保接口一致性，便于后续扩展更多排序算法。
 from abc import ABC, abstractmethod
+import random
 
 
 class ASort(ABC):
@@ -57,7 +58,8 @@ class CustomSort(ASort):
 
 
 if __name__ == "__main__":
-    data = [64, 34, 25, 12, 22, 11, 90]
+    # 随机生成 10 个 1-100 之间的整数作为测试数据。
+    data = [random.randint(1, 100) for _ in range(10)]
     print("排序前:", data)
     sorter = CustomSort()
 
