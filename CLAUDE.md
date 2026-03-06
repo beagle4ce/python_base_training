@@ -10,19 +10,19 @@ A Python training/practice project managed with `uv`. Requires Python 3.14+.
 
 ```bash
 # Run the main script
-uv run python main.py
+uv run --active python main.py
 
 # Add a dependency
 uv add <package>
 
 # Run a Python file or script
-uv run python <file.py>
+uv run --active python <file.py>
 
 # Run a single test (once tests are added)
-uv run pytest tests/test_<name>.py::test_<function>
+uv run --active pytest tests/test_<name>.py::test_<function>
 
 # Run all tests
-uv run pytest
+uv run --active pytest
 ```
 
 ## Code Style
@@ -76,3 +76,10 @@ class Color(Enum):
 - `pyproject.toml` — project metadata and dependencies (no deps currently)
 - `uv.lock` — lockfile managed by `uv`
 - `.python-version` — pins Python 3.14
+
+### code/ 目录
+
+```
+code/
+└── pop_sort.py       — 排序算法练习
+```
