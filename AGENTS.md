@@ -81,10 +81,15 @@ The snapshot below reflects the current tracked files. Keep this section in sync
 - `uv run --active python code/withDemo.py`: run the basic `with` file demo.
 
 ## Coding Style & Naming Conventions
+- Always write code in a Pythonic style while preserving this repository's existing naming rules. Prefer clear, idiomatic Python that reads naturally to beginners.
 - Use Python 3.14+ features and precise type annotations such as `list[int]` and `dict[str, int]`.
 - Classes use `PascalCase`; functions and variables use `camelCase`; constants use `UPPER_SNAKE_CASE`.
 - Add concise Chinese comments for classes, methods, and non-trivial algorithm blocks, explaining both what the code does and why the approach was chosen.
 - Keep functions focused on a single behavior and avoid unnecessary abstractions in training examples.
+- Prefer standard-library and built-in Python constructs when they improve clarity, such as direct iteration, `enumerate()`, tuple unpacking, context managers, and straightforward collection operations.
+- Avoid non-Pythonic boilerplate, including unnecessary Java/C-style patterns, manual index loops when the index is unused, verbose temporary variables that add no teaching value, and over-engineered wrappers around simple logic.
+- Pythonic does not mean clever for its own sake: use concise idioms only when they remain easy for beginners to read and explain.
+- Prefer examples such as `for name in userNames`, `if items:`, and `with open(...) as file:` over more verbose alternatives when the meaning is the same.
 - Prefer straightforward syntax over clever or highly reusable patterns in beginner-facing code.
 - Preserve each file's existing indentation style when editing; do not reformat unrelated lines just to normalize spacing.
 

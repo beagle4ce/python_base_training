@@ -67,10 +67,22 @@ uv run --active pytest
 - 用 `tuple[int, str]` 而非 `tuple`
 - 若元素类型不确定，使用 `list[Any]` 并从 `typing` 导入 `Any`
 
+默认采用 Pythonic 风格编写代码，但保留本仓库现有命名规则：类使用 `PascalCase`，方法和变量使用 `camelCase`，常量使用 `UPPER_SNAKE_CASE`。
+
+优先选择符合 Python 习惯且便于初学者理解的写法，例如：
+
+- 直接迭代而不是在索引无意义时手动 `for i in range(...)`
+- `if items:` 而不是仅为判断是否为空而写 `if len(items) > 0:`
+- `with open(...) as file:` 而不是手动 `open()` 后再 `close()`
+- 标准库和内置能力优先，不为简单逻辑增加多余样板或包装层
+
+Pythonic 不等于炫技。只有在更清晰时才使用推导式、解包等简洁写法，不要为了写得短而牺牲初学者可读性。
+
 ## Naming Conventions
 
 命名规则：
 
+- 下面的命名约定是本仓库的固定约束，优先于通用的 Python `snake_case` 惯例
 - **类、方法、变量名** — 使用驼峰命名法（camelCase / PascalCase）
 - **常量、枚举值** — 使用全大写字母加下划线分隔（UPPER_SNAKE_CASE）
 
