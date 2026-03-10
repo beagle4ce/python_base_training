@@ -11,3 +11,9 @@ wheels/
 
 # VS Code files
 .vscode
+
+# Root docs folder
+/docs/
+
+# Generated demo files
+code/withDemo.txt

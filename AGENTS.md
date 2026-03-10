@@ -35,22 +35,38 @@ The snapshot below reflects the current tracked files. Keep this section in sync
 ├── CLAUDE.md
 ├── LICENSE
 ├── README.md
+├── docs/
+│   └── plans/
+│       ├── 2026-03-10-duck-type-design.md
+│       ├── 2026-03-10-duck-type.md
+│       ├── 2026-03-10-with-demo-design.md
+│       └── 2026-03-10-with-demo.md
 ├── main.py
 ├── pyproject.toml
 ├── uv.lock
 ├── code/
 │   ├── basicType.py
 │   ├── collections.py
+│   ├── duckType.py
 │   ├── greeting.py
-│   └── pop_sort.py
+│   ├── magicMethod.py
+│   ├── pop_sort.py
+│   └── withDemo.py
 ```
 
 ## Code File Notes
 - `main.py`: minimal executable entry containing `main()`.
 - `code/basicType.py`: runnable examples showing direct assignment for common Python basic value types with teaching-friendly sectioned output.
 - `code/collections.py`: runnable examples showing initialization and one basic operation for common collection types with teaching-friendly sectioned output.
+- `code/duckType.py`: runnable example showing how `Protocol` models duck typing without explicit inheritance.
 - `code/greeting.py`: list iteration and formatted output practice.
+- `code/magicMethod.py`: runnable examples showing common Python magic methods and their basic call order for beginners.
 - `code/pop_sort.py`: abstract sort interface plus bubble sort and quick sort examples.
+- `code/withDemo.py`: runnable example showing the basic `with open(...)` pattern for writing and reading a file.
+- `docs/plans/2026-03-10-duck-type-design.md`: brief approved design note for the beginner-friendly `Protocol` duck typing demo.
+- `docs/plans/2026-03-10-duck-type.md`: step-by-step implementation plan for adding the `Protocol` duck typing demo.
+- `docs/plans/2026-03-10-with-demo-design.md`: brief approved design note for the beginner-friendly `with` demo.
+- `docs/plans/2026-03-10-with-demo.md`: step-by-step implementation plan for adding the `with` demo.
 - `README.md`: currently empty, so rely on source files and this document for project guidance.
 
 ## Build, Test, and Development Commands
@@ -58,8 +74,11 @@ The snapshot below reflects the current tracked files. Keep this section in sync
 - `uv run --active python main.py`: run the entry script.
 - `uv run --active python code/basicType.py`: run basic type assignment examples.
 - `uv run --active python code/collections.py`: run common collection examples.
+- `uv run --active python code/duckType.py`: run the basic `Protocol` duck typing demo.
 - `uv run --active python code/greeting.py`: run greeting practice code.
+- `uv run --active python code/magicMethod.py`: run basic magic method examples.
 - `uv run --active python code/pop_sort.py`: run sorting demos.
+- `uv run --active python code/withDemo.py`: run the basic `with` file demo.
 
 ## Coding Style & Naming Conventions
 - Use Python 3.14+ features and precise type annotations such as `list[int]` and `dict[str, int]`.
