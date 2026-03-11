@@ -47,10 +47,12 @@ The snapshot below reflects the current tracked files. Keep this section in sync
 ├── code/
 │   ├── basicType.py
 │   ├── collections.py
+│   ├── divisionException.py
 │   ├── duckType.py
 │   ├── greeting.py
 │   ├── magicMethod.py
 │   ├── pop_sort.py
+│   ├── tryExceptElseFinally.py
 │   └── withDemo.py
 ```
 
@@ -58,10 +60,12 @@ The snapshot below reflects the current tracked files. Keep this section in sync
 - `main.py`: minimal executable entry containing `main()`.
 - `code/basicType.py`: runnable examples showing direct assignment for common Python basic value types with teaching-friendly sectioned output.
 - `code/collections.py`: runnable examples showing initialization and one basic operation for common collection types with teaching-friendly sectioned output.
+- `code/divisionException.py`: runnable example showing how `ZeroDivisionError` can propagate upward naturally or be re-raised with `raise` for upper-layer handling.
 - `code/duckType.py`: runnable example showing how `Protocol` models duck typing without explicit inheritance.
 - `code/greeting.py`: list iteration and formatted output practice.
 - `code/magicMethod.py`: runnable examples showing common Python magic methods and their basic call order for beginners.
 - `code/pop_sort.py`: abstract sort interface plus bubble sort and quick sort examples.
+- `code/tryExceptElseFinally.py`: runnable example showing the execution order of `try`, `except`, `else`, and `finally` through one success path and one exception path.
 - `code/withDemo.py`: runnable example showing the basic `with open(...)` pattern for writing and reading a file.
 - `docs/plans/2026-03-10-duck-type-design.md`: brief approved design note for the beginner-friendly `Protocol` duck typing demo.
 - `docs/plans/2026-03-10-duck-type.md`: step-by-step implementation plan for adding the `Protocol` duck typing demo.
@@ -74,10 +78,12 @@ The snapshot below reflects the current tracked files. Keep this section in sync
 - `uv run --active python main.py`: run the entry script.
 - `uv run --active python code/basicType.py`: run basic type assignment examples.
 - `uv run --active python code/collections.py`: run common collection examples.
+- `uv run --active python code/divisionException.py`: run the integer-division exception propagation and re-raise demo.
 - `uv run --active python code/duckType.py`: run the basic `Protocol` duck typing demo.
 - `uv run --active python code/greeting.py`: run greeting practice code.
 - `uv run --active python code/magicMethod.py`: run basic magic method examples.
 - `uv run --active python code/pop_sort.py`: run sorting demos.
+- `uv run --active python code/tryExceptElseFinally.py`: run the `try` / `except` / `else` / `finally` execution-order demo.
 - `uv run --active python code/withDemo.py`: run the basic `with` file demo.
 
 ## Coding Style & Naming Conventions
@@ -95,6 +101,9 @@ The snapshot below reflects the current tracked files. Keep this section in sync
 
 ## Testing Guidelines
 - Unless the user explicitly requests tests, do not add unit tests or expand test coverage.
+- Repository-specific rules override general workflow or skill guidance.
+- Do not use TDD or any workflow preference to justify adding tests, creating a `tests/` directory, or documenting test-only commands unless the user explicitly requests testing work.
+- When verification is needed but tests were not explicitly requested, prefer direct runtime checks such as `uv run --active python <file.py>` instead of creating automated tests.
 - When the user explicitly requests testing work, prefer `pytest` via `uv run --active pytest`.
 - For algorithm exercises, when tests are explicitly requested, prioritize edge cases such as empty input, duplicate values, already-sorted input, and reverse-sorted input.
 - If the user explicitly requests a new test file, keep it narrow and directly tied to the requested change.
